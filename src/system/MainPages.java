@@ -74,7 +74,8 @@ public class MainPages {
 		KFCmenu1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				FoodDesc kfcDesc = new FoodDesc(kfc.getMenuName(1),kfc.getPrice(1),kfc.getMenuDesc(1),kfc.getMenuPic(1));
+				FoodDesc kfcDesc = new FoodDesc(kfc.getMenuName(1),kfc.getPrice(1),kfc.getMenuDesc(1),kfc.getBigPic(1));
+				FoodDesc.main(null);
 			}
 		});
 		KFCmenu1.setBounds(21, 25, 300, 250);
@@ -99,6 +100,13 @@ public class MainPages {
 		KFCmenu1.add(kfcMenu1Price);
 		
 		JPanel KFCmenu2 = new JPanel();
+		KFCmenu2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				FoodDesc kfcDesc = new FoodDesc(kfc.getMenuName(2),kfc.getPrice(2),kfc.getMenuDesc(2),kfc.getBigPic(2));
+				FoodDesc.main(null);
+			}
+		});
 		KFCmenu2.setBounds(21, 300, 300, 250);
 		KFC.add(KFCmenu2);
 		KFCmenu2.setLayout(null);
@@ -121,6 +129,13 @@ public class MainPages {
 		KFCmenu2.add(kfcMenu2Price);
 		
 		JPanel KFCmenu3 = new JPanel();
+		KFCmenu3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				FoodDesc kfcDesc = new FoodDesc(kfc.getMenuName(3),kfc.getPrice(3),kfc.getMenuDesc(3),kfc.getBigPic(3));
+				FoodDesc.main(null);
+			}
+		});
 		KFCmenu3.setBounds(342, 25, 300, 250);
 		KFC.add(KFCmenu3);
 		KFCmenu3.setLayout(null);
@@ -143,6 +158,13 @@ public class MainPages {
 		KFCmenu3.add(kfcMenu3Price);
 		
 		JPanel KFCmenu4 = new JPanel();
+		KFCmenu4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				FoodDesc kfcDesc = new FoodDesc(kfc.getMenuName(4),kfc.getPrice(4),kfc.getMenuDesc(4),kfc.getBigPic(4));
+				FoodDesc.main(null);
+			}
+		});
 		KFCmenu4.setBounds(342, 300, 300, 250);
 		KFC.add(KFCmenu4);
 		KFCmenu4.setLayout(null);
@@ -165,6 +187,13 @@ public class MainPages {
 		KFCmenu4.add(kfcMenu4Price);
 		
 		JPanel KFCmenu5 = new JPanel();
+		KFCmenu5.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				FoodDesc kfcDesc = new FoodDesc(kfc.getMenuName(5),kfc.getPrice(5),kfc.getMenuDesc(5),kfc.getBigPic(5));
+				FoodDesc.main(null);
+			}
+		});
 		KFCmenu5.setBounds(663, 25, 300, 250);
 		KFC.add(KFCmenu5);
 		KFCmenu5.setLayout(null);
@@ -187,6 +216,13 @@ public class MainPages {
 		KFCmenu5.add(kfcMenu5Price);
 		
 		JPanel KFCmenu6 = new JPanel();
+		KFCmenu6.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				FoodDesc kfcDesc = new FoodDesc(kfc.getMenuName(6),kfc.getPrice(6),kfc.getMenuDesc(6),kfc.getBigPic(6));
+				FoodDesc.main(null);
+			}
+		});
 		KFCmenu6.setBounds(663, 300, 300, 250);
 		KFC.add(KFCmenu6);
 		KFCmenu6.setLayout(null);
@@ -244,6 +280,13 @@ public class MainPages {
 		tealive.setLayout(null);
 		
 		JPanel tlMenu1 = new JPanel();
+		tlMenu1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				FoodDesc teaDetails = new FoodDesc(tea.getMenuName(1), tea.getPrice(1), tea.getMenuDesc(1), tea.getBigPic(1));
+				teaDetails.main(null);
+			}
+		});
 		tlMenu1.setBounds(21, 25, 300, 250);
 		tealive.add(tlMenu1);
 		tlMenu1.setLayout(null);
@@ -266,6 +309,13 @@ public class MainPages {
 		tlMenu1.add(tlMenuPic1);
 		
 		JPanel tlMenu2 = new JPanel();
+		tlMenu2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				FoodDesc teaDetails = new FoodDesc(tea.getMenuName(2), tea.getPrice(2), tea.getMenuDesc(2), tea.getBigPic(2));
+				teaDetails.main(null);
+			}
+		});
 		tlMenu2.setBounds(342, 25, 300, 250);
 		tealive.add(tlMenu2);
 		tlMenu2.setLayout(null);
@@ -288,6 +338,13 @@ public class MainPages {
 		tlMenu2.add(tlMenuPic2);
 		
 		JPanel tlMenu3 = new JPanel();
+		tlMenu3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				FoodDesc teaDetails = new FoodDesc(tea.getMenuName(3), tea.getPrice(3), tea.getMenuDesc(3), tea.getBigPic(3));
+				teaDetails.main(null);
+			}
+		});
 		tlMenu3.setBounds(663, 25, 300, 250);
 		tealive.add(tlMenu3);
 		tlMenu3.setLayout(null);
@@ -310,6 +367,13 @@ public class MainPages {
 		tlMenu3.add(tlMenuPic3);
 		
 		JPanel tlMenu4 = new JPanel();
+		tlMenu4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				FoodDesc teaDetails = new FoodDesc(tea.getMenuName(4), tea.getPrice(4), tea.getMenuDesc(4), tea.getBigPic(4));
+				teaDetails.main(null);
+			}
+		});
 		tlMenu4.setBounds(21, 300, 300, 250);
 		tealive.add(tlMenu4);
 		tlMenu4.setLayout(null);
@@ -375,6 +439,13 @@ public class MainPages {
 		subaidah.setLayout(null);
 		
 		JPanel sbdMenu_1 = new JPanel();
+		sbdMenu_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				FoodDesc sbdDetails = new FoodDesc(sbd.getMenuName(1), sbd.getPrice(1), sbd.getMenuDesc(1), sbd.getBigPic(1));
+				sbdDetails.main(null);
+			}
+		});
 		sbdMenu_1.setLayout(null);
 		sbdMenu_1.setBounds(21, 25, 300, 250);
 		subaidah.add(sbdMenu_1);
@@ -397,6 +468,13 @@ public class MainPages {
 		sbdMenu_1.add(sbdMenuPic1);
 		
 		JPanel sbdMenu_2 = new JPanel();
+		sbdMenu_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				FoodDesc sbdDetails = new FoodDesc(sbd.getMenuName(2), sbd.getPrice(2), sbd.getMenuDesc(2), sbd.getBigPic(2));
+				sbdDetails.main(null);
+			}
+		});
 		sbdMenu_2.setLayout(null);
 		sbdMenu_2.setBounds(343, 25, 300, 250);
 		subaidah.add(sbdMenu_2);
@@ -419,11 +497,18 @@ public class MainPages {
 		sbdMenu_2.add(sbdMenuPic2);
 		
 		JPanel sbdMenu_3 = new JPanel();
+		sbdMenu_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				FoodDesc sbdDetails = new FoodDesc(sbd.getMenuName(3), sbd.getPrice(3), sbd.getMenuDesc(3), sbd.getBigPic(3));
+				sbdDetails.main(null);
+			}
+		});
 		sbdMenu_3.setLayout(null);
 		sbdMenu_3.setBounds(21, 298, 300, 250);
 		subaidah.add(sbdMenu_3);
 		
-		JLabel sbdMenu3 = new JLabel(sbd.getMenuPic(3));
+		JLabel sbdMenu3 = new JLabel(sbd.getMenuName(3));
 		sbdMenu3.setHorizontalAlignment(SwingConstants.CENTER);
 		sbdMenu3.setFont(new Font("Calibri", Font.PLAIN, 22));
 		sbdMenu3.setBounds(0, 175, 300, 38);
@@ -441,6 +526,13 @@ public class MainPages {
 		sbdMenu_3.add(sbdMenuPic3);
 		
 		JPanel sbdMenu_4 = new JPanel();
+		sbdMenu_4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				FoodDesc sbdDetails = new FoodDesc(sbd.getMenuName(4), sbd.getPrice(4), sbd.getMenuDesc(4), sbd.getBigPic(4));
+				sbdDetails.main(null);
+			}
+		});
 		sbdMenu_4.setLayout(null);
 		sbdMenu_4.setBounds(343, 298, 300, 250);
 		subaidah.add(sbdMenu_4);
@@ -463,6 +555,13 @@ public class MainPages {
 		sbdMenu_4.add(sbdMenuPic4);
 		
 		JPanel sbdMenu_5 = new JPanel();
+		sbdMenu_5.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				FoodDesc sbdDetails = new FoodDesc(sbd.getMenuName(5), sbd.getPrice(5), sbd.getMenuDesc(5), sbd.getBigPic(5));
+				sbdDetails.main(null);
+			}
+		});
 		sbdMenu_5.setLayout(null);
 		sbdMenu_5.setBounds(664, 25, 300, 250);
 		subaidah.add(sbdMenu_5);

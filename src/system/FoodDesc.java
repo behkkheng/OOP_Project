@@ -5,10 +5,17 @@ import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.*;
+import javax.swing.border.Border;
+import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
+import javax.swing.plaf.basic.BasicBorders;
+import javax.swing.text.AttributeSet.ColorAttribute;
+
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class FoodDesc extends JFrame {
 
@@ -37,22 +44,26 @@ public class FoodDesc extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public FoodDesc(String menuName, double menuPrice, String manuDesc, ImageIcon menuPic) {
+	public FoodDesc(String menuName, double menuPrice, String menuDesc, ImageIcon menuPic) {
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowDeactivated(WindowEvent e) {
+				dispose();
+			}
+		});
 		this.menuName = menuName;
 		this.menuDesc = menuDesc;
 		this.menuPrice = menuPrice;
 		this.menuPic = menuPic;
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 640, 600);
+		setTitle("Description of food");
+		ImageIcon imgIcon = new ImageIcon(getClass().getResource("./resources/KTF_logo.jpg"));
+		setIconImage(imgIcon.getImage());
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		JPanel header = new JPanel();
-		header.setBounds(0, 0, 630, 100);
-		contentPane.add(header);
-		header.setLayout(null);
 		
 		JPanel bottomPanel = new JPanel();
 		bottomPanel.setBounds(0, 500, 630, 71);
@@ -78,6 +89,9 @@ public class FoodDesc extends JFrame {
 				dispose();
 			}
 		});
+		
+		Border blackLine = BorderFactory.createLineBorder(Color.black);
+		
 		addToCart.setBounds(443, 15, 177, 41);
 		bottomPanel.add(addToCart);
 		addToCart.setBackground(Color.GREEN);
@@ -85,18 +99,39 @@ public class FoodDesc extends JFrame {
 		addToCart.setFont(new Font("Segoe UI", Font.BOLD, 22));
 		
 		JPanel showDesc = new JPanel();
-		showDesc.setBounds(0, 100, 630, 400);
+		showDesc.setBounds(0, 0, 630, 500);
 		contentPane.add(showDesc);
 		showDesc.setLayout(null);
 		
+		JLabel foodDesc = new JLabel(menuDesc);
+		foodDesc.setBorder(blackLine);
+		foodDesc.setBackground(Color.WHITE);
+		foodDesc.setHorizontalAlignment(SwingConstants.CENTER);
+		foodDesc.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+		foodDesc.setBounds(0, 285, 630, 215);
+		showDesc.add(foodDesc);
+		
 		JLabel foodImage = new JLabel("");
+		foodImage.setHorizontalAlignment(SwingConstants.CENTER);
 		foodImage.setIcon(menuPic);
-		foodImage.setBounds(0, 0, 630, 229);
+		foodImage.setBounds(0, 0, 630, 205);
 		showDesc.add(foodImage);
 		
-		JLabel foodDesc = new JLabel(menuDesc);
-		foodDesc.setFont(new Font("Segoe UI", Font.PLAIN, 22));
-		foodDesc.setBounds(0, 229, 630, 171);
-		showDesc.add(foodDesc);
+		JLabel foodName = new JLabel(menuName);
+	
+		foodName.setBorder(blackLine);
+		foodName.setBackground(Color.WHITE);
+		foodName.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+		foodName.setHorizontalAlignment(SwingConstants.CENTER);
+		foodName.setBounds(0, 205, 630, 40);
+		showDesc.add(foodName);
+		
+		JLabel foodPrice = new JLabel("Unit Price: RM "+menuPrice);
+		foodPrice.setBorder(blackLine);
+		foodPrice.setBackground(Color.WHITE);
+		foodPrice.setHorizontalAlignment(SwingConstants.CENTER);
+		foodPrice.setFont(new Font("Segoe UI", Font.PLAIN, 22));
+		foodPrice.setBounds(0, 245, 630, 40);
+		showDesc.add(foodPrice);
 	}
 }

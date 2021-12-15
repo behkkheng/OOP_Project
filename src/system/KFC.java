@@ -14,6 +14,7 @@ public class KFC {
 	private ArrayList<String> menuDesc;
 	private ArrayList<Double> price;
 	private ArrayList<ImageIcon> menuPic;
+	private ArrayList<ImageIcon> bigPic;
 
 	KFC(){
 		ArrayList<String> menuName = new ArrayList<String>();
@@ -51,6 +52,15 @@ public class KFC {
 		menuPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/kfc5 resize.jpg")));
 		menuPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/kfc6 resize.jpg")));
 		this.menuPic = menuPic;
+		
+		ArrayList<ImageIcon> bigPic = new ArrayList<>();
+		bigPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/kfc1 expand.jpg")));
+		bigPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/kfc2 expand.jpg")));
+		bigPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/kfc3 expand.jpg")));
+		bigPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/kfc4 expand.jpg")));
+		bigPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/kfc5 expand.jpg")));
+		bigPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/kfc6 expand.jpg")));
+		this.bigPic = bigPic;
 	}
 
 	public double getPrice(int number) {
@@ -67,5 +77,9 @@ public class KFC {
 
 	public ImageIcon getMenuPic(int number){
 		return menuPic.get(number-1);
+	}
+	
+	public ImageIcon getBigPic(int number) {
+		return bigPic.get(number-1);
 	}
 }

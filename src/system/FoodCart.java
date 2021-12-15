@@ -28,7 +28,7 @@ public class FoodCart extends JFrame {
 				try {
 					FoodCart frame = new FoodCart();
 					frame.setVisible(true);
-					ImageIcon imgIcon = new ImageIcon(getClass().getResource("./KTF_logo.jpg"));
+					ImageIcon imgIcon = new ImageIcon(getClass().getResource("./resources/KTF_logo.jpg"));
 					frame.setIconImage(imgIcon.getImage());
 				} catch (Exception e) {
 					e.printStackTrace();
