@@ -4,21 +4,19 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
 import java.awt.Font;
-import javax.swing.JSpinner;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.SwingConstants;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class FoodDesc extends JFrame {
 
 	private JPanel contentPane;
+	private static String menuName;
+	private static String menuDesc;
+	private static double menuPrice;
+	private static ImageIcon menuPic;
 
 	/**
 	 * Launch the application.
@@ -27,7 +25,7 @@ public class FoodDesc extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					FoodDesc frame = new FoodDesc();
+					FoodDesc frame = new FoodDesc(menuName, menuPrice, menuDesc, menuPic);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,7 +37,11 @@ public class FoodDesc extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public FoodDesc() {
+	public FoodDesc(String menuName, double menuPrice, String manuDesc, ImageIcon menuPic) {
+		this.menuName = menuName;
+		this.menuDesc = menuDesc;
+		this.menuPrice = menuPrice;
+		this.menuPic = menuPic;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 640, 600);
 		contentPane = new JPanel();
@@ -88,10 +90,11 @@ public class FoodDesc extends JFrame {
 		showDesc.setLayout(null);
 		
 		JLabel foodImage = new JLabel("");
+		foodImage.setIcon(menuPic);
 		foodImage.setBounds(0, 0, 630, 229);
 		showDesc.add(foodImage);
 		
-		JLabel foodDesc = new JLabel("New label");
+		JLabel foodDesc = new JLabel(menuDesc);
 		foodDesc.setFont(new Font("Segoe UI", Font.PLAIN, 22));
 		foodDesc.setBounds(0, 229, 630, 171);
 		showDesc.add(foodDesc);

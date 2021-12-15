@@ -48,6 +48,7 @@ public class MainPages {
 	 */
 	private void initialize() {
 		DecimalFormat df = new DecimalFormat( "##.00" );
+		KFC kfc = new KFC();
 
 		frame = new JFrame("Foor ordering system");
 		frame.setResizable(false);
@@ -73,14 +74,13 @@ public class MainPages {
 		KFCmenu1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				FoodDesc kfcDesc = new FoodDesc();
+				FoodDesc kfcDesc = new FoodDesc(kfc.getMenuName(1),kfc.getPrice(1),kfc.getMenuDesc(1),kfc.getMenuPic(1));
 			}
 		});
 		KFCmenu1.setBounds(21, 25, 300, 250);
 		KFC.add(KFCmenu1);
 		KFCmenu1.setLayout(null);
 
-		KFC kfc = new KFC();
 		JLabel kfcMenu1 = new JLabel(kfc.getMenuName(1));
 		kfcMenu1.setFont(new Font("Calibri", Font.PLAIN, 22));
 		kfcMenu1.setHorizontalAlignment(SwingConstants.CENTER);
