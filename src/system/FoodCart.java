@@ -1,6 +1,5 @@
 package system;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -13,7 +12,6 @@ import javax.swing.SwingConstants;
 import java.awt.Color;
 import javax.swing.ImageIcon;
 import java.awt.Font;
-import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -87,7 +85,7 @@ public class FoodCart extends JFrame {
 		contentPane.add(orderDetailsTitle);
 		
 		JLabel logo = new JLabel("");
-		logo.setIcon(new ImageIcon(FoodCart.class.getResource("/system/KTF_resize.jpg")));
+		logo.setIcon(new ImageIcon(FoodCart.class.getResource("/system/resources/KTF_resize.jpg")));
 		logo.setBounds(10, 5, 98, 85);
 		header.add(logo);
 		
@@ -104,7 +102,7 @@ public class FoodCart extends JFrame {
 				dispose();
 			}
 		});
-		back.setIcon(new ImageIcon(FoodCart.class.getResource("/system/back resize.png")));
+		back.setIcon(new ImageIcon(FoodCart.class.getResource("/system/resources/back resize.png")));
 		back.setBounds(530, 5, 90, 90);
 		header.add(back);
 		

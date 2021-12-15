@@ -6,7 +6,6 @@ import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.ImageIcon;
-import javax.swing.JMenuBar;
 import javax.swing.JLabel;
 import javax.swing.border.LineBorder;
 import javax.swing.SwingConstants;
@@ -77,19 +76,20 @@ public class MainPages {
 		KFCmenu1.setBounds(21, 25, 300, 250);
 		KFC.add(KFCmenu1);
 		KFCmenu1.setLayout(null);
-		
-		JLabel kfcMenu1 = new JLabel("Cheezy Wedges");
+
+		KFC kfc = new KFC();
+		JLabel kfcMenu1 = new JLabel(kfc.getMenuName(1));
 		kfcMenu1.setFont(new Font("Calibri", Font.PLAIN, 22));
 		kfcMenu1.setHorizontalAlignment(SwingConstants.CENTER);
 		kfcMenu1.setBounds(0, 175, 300, 38);
 		KFCmenu1.add(kfcMenu1);
 		
 		JLabel menuPic1 = new JLabel("");
-		menuPic1.setIcon(new ImageIcon(MainPages.class.getResource("/system/kfc1 resize.jpg")));
+		menuPic1.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/kfc1 resize.jpg")));
 		menuPic1.setBounds(0, 0, 300, 175);
 		KFCmenu1.add(menuPic1);
 		
-		JLabel kfcMenu1Price = new JLabel("RM 6.99");
+		JLabel kfcMenu1Price = new JLabel(kfc.getPrice(1));
 		kfcMenu1Price.setHorizontalAlignment(SwingConstants.CENTER);
 		kfcMenu1Price.setFont(new Font("Calibri", Font.PLAIN, 22));
 		kfcMenu1Price.setBounds(0, 213, 300, 37);
@@ -107,7 +107,7 @@ public class MainPages {
 		KFCmenu2.add(kfcMenu2);
 		
 		JLabel menuPic2 = new JLabel("");
-		menuPic2.setIcon(new ImageIcon(MainPages.class.getResource("/system/kfc4 resize.jpg")));
+		menuPic2.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/kfc4 resize.jpg")));
 		menuPic2.setBounds(0, 0, 300, 175);
 		KFCmenu2.add(menuPic2);
 		
@@ -129,7 +129,7 @@ public class MainPages {
 		KFCmenu3.add(kfcMenu3);
 		
 		JLabel menuPic3 = new JLabel("");
-		menuPic3.setIcon(new ImageIcon(MainPages.class.getResource("/system/kfc2 resize.jpg")));
+		menuPic3.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/kfc2 resize.jpg")));
 		menuPic3.setBounds(0, 0, 300, 175);
 		KFCmenu3.add(menuPic3);
 		
@@ -151,7 +151,7 @@ public class MainPages {
 		KFCmenu4.add(kfcMenu4);
 		
 		JLabel menuPic4 = new JLabel("");
-		menuPic4.setIcon(new ImageIcon(MainPages.class.getResource("/system/kfc5 resize.jpg")));
+		menuPic4.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/kfc5 resize.jpg")));
 		menuPic4.setBounds(0, 0, 300, 175);
 		KFCmenu4.add(menuPic4);
 		
@@ -173,7 +173,7 @@ public class MainPages {
 		KFCmenu5.add(kfcMenu5);
 		
 		JLabel menuPic5 = new JLabel("");
-		menuPic5.setIcon(new ImageIcon(MainPages.class.getResource("/system/kfc3 resize.jpg")));
+		menuPic5.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/kfc3 resize.jpg")));
 		menuPic5.setBounds(0, 0, 300, 175);
 		KFCmenu5.add(menuPic5);
 		
@@ -195,7 +195,7 @@ public class MainPages {
 		KFCmenu6.add(kfcMenu6);
 		
 		JLabel menuPic6 = new JLabel("");
-		menuPic6.setIcon(new ImageIcon(MainPages.class.getResource("/system/kfc6 resize.jpg")));
+		menuPic6.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/kfc6 resize.jpg")));
 		menuPic6.setBounds(0, 0, 300, 175);
 		KFCmenu6.add(menuPic6);
 		
@@ -214,7 +214,7 @@ public class MainPages {
 		
 		JLabel KFC_label = new JLabel("KFC");
 		KFC_label.setForeground(Color.WHITE);
-		KFC_label.setIcon(new ImageIcon(MainPages.class.getResource("/system/kfc resize.jpg")));
+		KFC_label.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/kfc resize.jpg")));
 		KFC_label.setFont(new Font("Segoe UI Semibold", Font.BOLD, 30));
 		KFC_label.setHorizontalAlignment(SwingConstants.CENTER);
 		KFC_label.setBounds(20, 20, 240, 95);
@@ -223,12 +223,12 @@ public class MainPages {
 		sideNavigationBar.add(KFC_label);
 		
 		JLabel tealive_label = new JLabel("");
-		tealive_label.setIcon(new ImageIcon(MainPages.class.getResource("/system/tealive resize.jpg")));
+		tealive_label.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/tealive resize.jpg")));
 		tealive_label.setBounds(20, 135, 240, 95);
 		sideNavigationBar.add(tealive_label);
 		
 		JLabel subaidah_label = new JLabel("");
-		subaidah_label.setIcon(new ImageIcon(MainPages.class.getResource("/system/subaidah resize.jpg")));
+		subaidah_label.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/subaidah resize.jpg")));
 		subaidah_label.setBounds(20, 250, 240, 95);
 		sideNavigationBar.add(subaidah_label);
 		
@@ -256,7 +256,7 @@ public class MainPages {
 		tlMenu1.add(tlMenu1Price);
 		
 		JLabel tlMenuPic1 = new JLabel("");
-		tlMenuPic1.setIcon(new ImageIcon(MainPages.class.getResource("/system/tl1 resize.jpg")));
+		tlMenuPic1.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/tl1 resize.jpg")));
 		tlMenuPic1.setBounds(0, 0, 300, 175);
 		tlMenu1.add(tlMenuPic1);
 		
@@ -278,7 +278,7 @@ public class MainPages {
 		tlMenu2.add(tlMenu2Price);
 		
 		JLabel tlMenuPic2 = new JLabel("");
-		tlMenuPic2.setIcon(new ImageIcon(MainPages.class.getResource("/system/tl2 resize.jpg")));
+		tlMenuPic2.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/tl2 resize.jpg")));
 		tlMenuPic2.setBounds(0, 0, 300, 175);
 		tlMenu2.add(tlMenuPic2);
 		
@@ -300,7 +300,7 @@ public class MainPages {
 		tlMenu3.add(tlMenu3Price);
 		
 		JLabel tlMenuPic3 = new JLabel("");
-		tlMenuPic3.setIcon(new ImageIcon(MainPages.class.getResource("/system/tl3 resize.jpg")));
+		tlMenuPic3.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/tl3 resize.jpg")));
 		tlMenuPic3.setBounds(0, 0, 300, 175);
 		tlMenu3.add(tlMenuPic3);
 		
@@ -322,7 +322,7 @@ public class MainPages {
 		tlMenu4.add(tlMenu4Price);
 		
 		JLabel tlMenuPic4 = new JLabel("");
-		tlMenuPic4.setIcon(new ImageIcon(MainPages.class.getResource("/system/tl4 resize.jpg")));
+		tlMenuPic4.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/tl4 resize.jpg")));
 		tlMenuPic4.setBounds(0, 0, 300, 175);
 		tlMenu4.add(tlMenuPic4);
 		
@@ -332,7 +332,7 @@ public class MainPages {
 		topNavigationBar.setLayout(null);
 		
 		JLabel logo = new JLabel("");
-		logo.setIcon(new ImageIcon(MainPages.class.getResource("/system/KTF_resize.jpg")));
+		logo.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/KTF_resize.jpg")));
 		logo.setBounds(93, 10, 100, 90);
 		topNavigationBar.add(logo);
 		
@@ -356,7 +356,7 @@ public class MainPages {
 				foodCart.main(null);
 			}
 		});
-		foodCart.setIcon(new ImageIcon(MainPages.class.getResource("/system/food cart resize.png")));
+		foodCart.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/food cart resize.png")));
 		foodCart.setBounds(1166, 10, 90, 90);
 		topNavigationBar.add(foodCart);
 		
@@ -385,7 +385,7 @@ public class MainPages {
 		sbdMenu_1.add(sbdMenu1Price);
 		
 		JLabel sbdMenuPic1 = new JLabel("");
-		sbdMenuPic1.setIcon(new ImageIcon(MainPages.class.getResource("/system/sbd1 resize.jpg")));
+		sbdMenuPic1.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/sbd1 resize.jpg")));
 		sbdMenuPic1.setBounds(0, 0, 300, 175);
 		sbdMenu_1.add(sbdMenuPic1);
 		
@@ -407,7 +407,7 @@ public class MainPages {
 		sbdMenu_2.add(sbdMenu2Price);
 		
 		JLabel sbdMenuPic2 = new JLabel("");
-		sbdMenuPic2.setIcon(new ImageIcon(MainPages.class.getResource("/system/sbd2 resize.jpg")));
+		sbdMenuPic2.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/sbd2 resize.jpg")));
 		sbdMenuPic2.setBounds(0, 0, 300, 175);
 		sbdMenu_2.add(sbdMenuPic2);
 		
@@ -429,7 +429,7 @@ public class MainPages {
 		sbdMenu_3.add(sbdMenu3Price);
 		
 		JLabel sbdMenuPic3 = new JLabel("");
-		sbdMenuPic3.setIcon(new ImageIcon(MainPages.class.getResource("/system/sbd4 resize.jpg")));
+		sbdMenuPic3.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/sbd4 resize.jpg")));
 		sbdMenuPic3.setBounds(0, 0, 300, 175);
 		sbdMenu_3.add(sbdMenuPic3);
 		
@@ -451,7 +451,7 @@ public class MainPages {
 		sbdMenu_4.add(sbdMenu4Price);
 		
 		JLabel sbdMenuPic4 = new JLabel("");
-		sbdMenuPic4.setIcon(new ImageIcon(MainPages.class.getResource("/system/sbd5 resize.jpg")));
+		sbdMenuPic4.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/sbd5 resize.jpg")));
 		sbdMenuPic4.setBounds(0, 0, 300, 175);
 		sbdMenu_4.add(sbdMenuPic4);
 		
@@ -473,7 +473,7 @@ public class MainPages {
 		sbdMenu_5.add(sbdMenu5Price);
 		
 		JLabel sbdMenuPic5 = new JLabel("");
-		sbdMenuPic5.setIcon(new ImageIcon(MainPages.class.getResource("/system/sbd3 resize.jpg")));
+		sbdMenuPic5.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/sbd3 resize.jpg")));
 		sbdMenuPic5.setBounds(0, 0, 300, 175);
 		sbdMenu_5.add(sbdMenuPic5);;
 		
