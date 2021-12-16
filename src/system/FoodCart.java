@@ -5,10 +5,12 @@ import java.awt.EventQueue;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
+import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.text.DecimalFormat;
 import java.util.LinkedList;
 
 public class FoodCart extends JFrame {
@@ -38,8 +40,9 @@ public class FoodCart extends JFrame {
 	 * Create the frame.
 	 */
 	public FoodCart(LinkedList<Node> allOrder) {
+		DecimalFormat df = new DecimalFormat( "##.00" );
 		this.allOrder = allOrder;
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 640, 600);
 		setTitle("Food cart");
 		
@@ -48,11 +51,11 @@ public class FoodCart extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JButton confirmButton = new JButton("Confirm");
+		JButton confirmButton = new JButton("Buy");
 		confirmButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				JOptionPane.showMessageDialog(null, "Order Success! Your waiting number is ", "Success!", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Order Success! Please wait a while for preparing food!", "Success!", JOptionPane.INFORMATION_MESSAGE);
 			}
 		});
 		confirmButton.setFont(new Font("Segoe UI", Font.PLAIN, 25));
@@ -103,27 +106,53 @@ public class FoodCart extends JFrame {
 		back.setIcon(new ImageIcon(FoodCart.class.getResource("/system/resources/back resize.png")));
 		back.setBounds(530, 5, 90, 90);
 		header.add(back);
-		
-		JLabel orderDetails = new JLabel("New label");
-		orderDetails.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		orderDetails.setHorizontalAlignment(SwingConstants.CENTER);
-		orderDetails.setBounds(96, 180, 439, 260);
-		contentPane.add(orderDetails);
-		
-		JLabel total = new JLabel("Total: RM ");
+
+		double sum = 0;
+		for (int i = 0; i < allOrder.size(); i++) {
+			sum += allOrder.get(i).price*allOrder.get(i).quantity;
+			}
+
+		JLabel total = new JLabel("Total: RM "+sum);
 		total.setFont(new Font("Tahoma", Font.PLAIN, 17));
 		total.setHorizontalAlignment(SwingConstants.RIGHT);
 		total.setBounds(330, 450, 205, 40);
 		contentPane.add(total);
 
 		DefaultTableModel model = new DefaultTableModel();
-		JTable table = new JTable(model);
+		model.setColumnIdentifiers(new Object[]{"No.", "Food Name", "Qty.", "Unit Price", "Total",""});
+		JTable table = new JTable(model) {
+			private static final long serialVersionUID = 1L;
+
+			public boolean isCellEditable(int row, int column) {
+				return false;
+			};
+		};
+		model.addRow(new Object[]{"No.", "Food Name", "Qty.", "Unit Price","Total",""});
 		table.setBounds(16,180,599,260);
-		model.addRow(new Object[]{"No.", "Food Name", "Qty.", "Unit Price", "Total"});
+		table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+		table.setCellSelectionEnabled(true);
+		table.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int row = table.rowAtPoint(e.getPoint());
+				int col = table.columnAtPoint(e.getPoint());
+				if (col == 6){
+					for(int i=0; i<allOrder.size(); i++){
+						if (row == i+1){
+							Order order = new Order(allOrder);
+							order.removeMenu(allOrder.get(i).menuName,allOrder.get(i).quantity,allOrder.get(i).price);
+						}
+					}
+				}
+			}
+		});
+
+		contentPane.add(table);
 
 		for (int i=0; i<allOrder.size();i++){
-			model.addRow(new Object[]{String.valueOf(i+1), allOrder.get(i).menuName, allOrder.get(i).quantity, allOrder.get(i).price, allOrder.get(i).price*allOrder.get(i).quantity});
+			model.addRow(new Object[]{String.valueOf(i+1), allOrder.get(i).menuName, allOrder.get(i).quantity, allOrder.get(i).price, df.format(allOrder.get(i).price*allOrder.get(i).quantity),"Delete"});
 
 		}
 	}
+
 }

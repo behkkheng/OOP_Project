@@ -75,10 +75,13 @@ public class FoodDesc extends JFrame {
 		bottomPanel.setBounds(0, 500, 630, 71);
 		contentPane.add(bottomPanel);
 		bottomPanel.setLayout(null);
-		
-		JSpinner spinner = new JSpinner();
+
+		SpinnerModel spinnerModel = new SpinnerNumberModel(1, 0, 50, 1);
+		JSpinner spinner = new JSpinner(spinnerModel);
+		((JSpinner.NumberEditor) spinner.getEditor()).getFormat().setMaximumFractionDigits(1);
 		spinner.setFont(new Font("Segoe UI", Font.PLAIN, 17));
 		spinner.setBounds(108, 15, 72, 39);
+
 		bottomPanel.add(spinner);
 		
 		JLabel quantityLabel = new JLabel("Quantity:");

@@ -53,9 +53,6 @@ public class Order {
 				//Toolkit.getDefaultToolkit().beep();
 			}
 		}
-		for (int i = 0; i < allOrder.size(); i++) {
-			JOptionPane.showMessageDialog(null, allOrder.size() + "." + i + "." + allOrder.get(i).menuName + " qty: " + allOrder.get(i).quantity, "title", JOptionPane.INFORMATION_MESSAGE);
-		}
 		return allOrder;
 	}
 
