@@ -2,22 +2,19 @@ package system;
 
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.SwingConstants;
 import java.awt.Color;
-import javax.swing.ImageIcon;
+import javax.swing.table.DefaultTableModel;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.LinkedList;
 
 public class FoodCart extends JFrame {
 
 	private JPanel contentPane;
+	private static LinkedList<Node> allOrder;
 
 	/**
 	 * Launch the application.
@@ -26,7 +23,7 @@ public class FoodCart extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					FoodCart frame = new FoodCart();
+					FoodCart frame = new FoodCart(allOrder);
 					frame.setVisible(true);
 					ImageIcon imgIcon = new ImageIcon(getClass().getResource("./resources/KTF_logo.jpg"));
 					frame.setIconImage(imgIcon.getImage());
@@ -40,7 +37,8 @@ public class FoodCart extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public FoodCart() { 
+	public FoodCart(LinkedList<Node> allOrder) {
+		this.allOrder = allOrder;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 640, 600);
 		setTitle("Food cart");
@@ -117,5 +115,15 @@ public class FoodCart extends JFrame {
 		total.setHorizontalAlignment(SwingConstants.RIGHT);
 		total.setBounds(330, 450, 205, 40);
 		contentPane.add(total);
+
+		DefaultTableModel model = new DefaultTableModel();
+		JTable table = new JTable(model);
+		table.setBounds(16,180,599,260);
+		model.addRow(new Object[]{"No.", "Food Name", "Qty.", "Unit Price", "Total"});
+
+		for (int i=0; i<allOrder.size();i++){
+			model.addRow(new Object[]{String.valueOf(i+1), allOrder.get(i).menuName, allOrder.get(i).quantity, allOrder.get(i).price, allOrder.get(i).price*allOrder.get(i).quantity});
+
+		}
 	}
 }

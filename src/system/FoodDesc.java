@@ -16,6 +16,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.LinkedList;
 
 public class FoodDesc extends JFrame {
 
@@ -24,6 +25,8 @@ public class FoodDesc extends JFrame {
 	private static String menuDesc;
 	private static double menuPrice;
 	private static ImageIcon menuPic;
+	private int quantity;
+	private static LinkedList<Node> allOrder;
 
 	/**
 	 * Launch the application.
@@ -32,7 +35,7 @@ public class FoodDesc extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					FoodDesc frame = new FoodDesc(menuName, menuPrice, menuDesc, menuPic);
+					FoodDesc frame = new FoodDesc(menuName, menuPrice, menuDesc, menuPic, allOrder);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,7 +47,7 @@ public class FoodDesc extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public FoodDesc(String menuName, double menuPrice, String menuDesc, ImageIcon menuPic) {
+	public FoodDesc(String menuName, double menuPrice, String menuDesc, ImageIcon menuPic, LinkedList<Node> allOrder) {
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowDeactivated(WindowEvent e) {
@@ -55,6 +58,9 @@ public class FoodDesc extends JFrame {
 		this.menuDesc = menuDesc;
 		this.menuPrice = menuPrice;
 		this.menuPic = menuPic;
+		this.quantity = 0;
+		this.allOrder = allOrder;
+
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 640, 600);
 		setTitle("Description of food");
@@ -85,11 +91,20 @@ public class FoodDesc extends JFrame {
 		addToCart.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				JOptionPane.showMessageDialog(null, "Add to cart successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
-				dispose();
+				if ((int)spinner.getValue()==0){
+					JOptionPane.showMessageDialog(null, "Nothing had been added!", "Warning", JOptionPane.INFORMATION_MESSAGE);
+				}
+				else{
+					JOptionPane.showMessageDialog(null, "Add to cart successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+					dispose();
+					quantity = (int)spinner.getValue();
+					Order order = new Order(allOrder);
+					order.addMenu(menuName,quantity,menuPrice);
+				}
 			}
 		});
-		
+
+		//deco
 		Border blackLine = BorderFactory.createLineBorder(Color.black);
 		
 		addToCart.setBounds(443, 15, 177, 41);
@@ -134,4 +149,5 @@ public class FoodDesc extends JFrame {
 		foodPrice.setBounds(0, 245, 630, 40);
 		showDesc.add(foodPrice);
 	}
+
 }
