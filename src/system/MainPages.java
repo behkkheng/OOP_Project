@@ -33,15 +33,6 @@ public class MainPages {
 		});
 	}
 
-	Timer timer = new Timer(60000, new ActionListener() {
-		public void actionPerformed(ActionEvent e) {
-			frame.setVisible(false);
-			frame.dispose();
-			WelcomePage welcomePage = new WelcomePage();
-			welcomePage.main(args);
-		}
-	});
-
 	/**
 	 * Create the application.
 	 */
@@ -49,10 +40,20 @@ public class MainPages {
 		initialize();
 	}
 
+
 	/**
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
+		ActionListener taskPerformer = new ActionListener() {
+			public void actionPerformed(ActionEvent evt) {
+				WelcomePage.main(args);
+				frame.dispose();
+			}
+		};
+		Timer timer = new Timer(30000 ,taskPerformer);
+		timer.setRepeats(false);
+		timer.start();
 		LinkedList<Node> allOrder = new LinkedList<>();
 		this.allOrder = allOrder;
 		DecimalFormat df = new DecimalFormat( "##.00" );

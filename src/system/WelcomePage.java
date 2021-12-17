@@ -2,17 +2,12 @@ package system;
 
 import java.awt.EventQueue;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.BorderLayout;
-import javax.swing.JLabel;
-import javax.swing.JMenuBar;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JTextField;
 import java.awt.Font;
-import javax.swing.SwingConstants;
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -34,6 +29,7 @@ public class WelcomePage extends JFrame{
 				}
 			}
 		});
+
 	}
 
 	/**
@@ -74,7 +70,5 @@ public class WelcomePage extends JFrame{
 		backgroundPicture.setIcon(new ImageIcon(getClass().getResource("./resources/food.jpg")));
 		backgroundPicture.setBounds(0, 0, 1266, 683);
 		frame.getContentPane().add(backgroundPicture);
-		
-
 	}
 }
