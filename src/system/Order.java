@@ -20,6 +20,11 @@ public class Order {
 		this.allOrder = allOrder;
 	}
 
+	public LinkedList<Node> deleteAll(LinkedList<Node> allOrder){
+		allOrder.clear();
+		return allOrder;
+	}
+
 	public LinkedList<Node> addMenu(String newMenuName, int newQuantity, double newPrice) {
 
 		if (allOrder.isEmpty()) {
@@ -49,34 +54,31 @@ public class Order {
 				node.quantity = newQuantity;
 				node.price = newPrice;
 				allOrder.add(node);
-				//JOptionPane.showMessageDialog(null, allOrder.size() + allOrder.getLast().quantity+allOrder.getLast().menuName, "title", JOptionPane.INFORMATION_MESSAGE);
-				//Toolkit.getDefaultToolkit().beep();
+
 			}
 		}
 		return allOrder;
 	}
 
 	public LinkedList<Node> removeMenu(String newMenuName, int newQuantity, double newPrice) {
-		if (newQuantity == 0) {
+		if (newQuantity == 1) {
 			for (int i = 0; i < allOrder.size(); i++) {
 				if (allOrder.get(i).menuName.equals(newMenuName)) {
-					int quantity = allOrder.get(i).quantity + newQuantity;
 					allOrder.remove(i);
 					break;
-				} else {
-					Node node = new Node();
-					for (i = 0; i < allOrder.size(); i++) {
-						if (allOrder.get(i).menuName.equals(newMenuName)) {
-							int quantity = newQuantity - 1;
-							allOrder.remove(i);
-							node.quantity = quantity;
-							node.price = newPrice;
-							node.menuName = newMenuName;
-							allOrder.add(i, node);
-							break;
-						}
-					}
-
+				}
+			}
+		} else {
+			Node node = new Node();
+			for (int i = 0; i < allOrder.size(); i++) {
+				if (allOrder.get(i).menuName.equals(newMenuName)) {
+					int quantity = newQuantity - 1;
+					allOrder.remove(i);
+					node.quantity = quantity;
+					node.price = newPrice;
+					node.menuName = newMenuName;
+					allOrder.add(i, node);
+					break;
 				}
 			}
 		}
@@ -106,10 +108,10 @@ public class Order {
 	}
 
 	public int getQuantity(int number){
-		return allOrder.get(number).quantity;
+		return allOrder.get(number-1).quantity;
 	}
 
 	public double getTotalAmount(int number){
-		return getPrice(number)*getQuantity(number-1);
+		return getPrice(number-1)*getQuantity(number-1);
 	}
 }

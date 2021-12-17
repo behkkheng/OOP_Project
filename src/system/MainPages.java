@@ -3,24 +3,19 @@ package system;
 import java.awt.EventQueue;
 import java.awt.Color;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
+import javax.swing.*;
 import javax.swing.border.LineBorder;
-import javax.swing.SwingConstants;
 import java.awt.Font;
 import javax.swing.border.MatteBorder;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.awt.event.*;
 import java.text.DecimalFormat;
 import java.util.LinkedList;
-import javax.swing.JButton;
 
 public class MainPages {
 
 	private JFrame frame;
 	private LinkedList<Node> allOrder;
+	private String[] args = new String[1];
 
 	/**
 	 * Launch the application.
@@ -38,11 +33,19 @@ public class MainPages {
 		});
 	}
 
+	Timer timer = new Timer(60000, new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			frame.setVisible(false);
+			frame.dispose();
+			WelcomePage welcomePage = new WelcomePage();
+			welcomePage.main(args);
+		}
+	});
+
 	/**
 	 * Create the application.
 	 */
 	public MainPages() {
-
 		initialize();
 	}
 
@@ -616,4 +619,5 @@ public class MainPages {
 			}
 		});
 	}
+
 }

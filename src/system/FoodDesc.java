@@ -1,8 +1,6 @@
 package system;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.EventQueue;
+import java.awt.*;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -11,7 +9,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.plaf.basic.BasicBorders;
 import javax.swing.text.AttributeSet.ColorAttribute;
 
-import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
@@ -95,9 +92,11 @@ public class FoodDesc extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if ((int)spinner.getValue()==0){
+					Toolkit.getDefaultToolkit().beep();
 					JOptionPane.showMessageDialog(null, "Nothing had been added!", "Warning", JOptionPane.INFORMATION_MESSAGE);
 				}
 				else{
+					Toolkit.getDefaultToolkit().beep();
 					JOptionPane.showMessageDialog(null, "Add to cart successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
 					dispose();
 					quantity = (int)spinner.getValue();

@@ -51,7 +51,7 @@ public class WelcomePage extends JFrame{
 		frame.setBounds(100, 100, 1280, 720);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		ImageIcon imgIcon = new ImageIcon(getClass().getResource("./KTF_logo.jpg"));
+		ImageIcon imgIcon = new ImageIcon(getClass().getResource("./resources/KTF_logo.jpg"));
 		frame.setIconImage(imgIcon.getImage());
 		
 		JLabel pressToContinue = new JLabel("Press anywhere to continue...");
@@ -71,7 +71,7 @@ public class WelcomePage extends JFrame{
 
 		backgroundPicture.setForeground(Color.BLACK);
 		backgroundPicture.setHorizontalAlignment(SwingConstants.CENTER);
-		backgroundPicture.setIcon(new ImageIcon(getClass().getResource("./food.jpg")));
+		backgroundPicture.setIcon(new ImageIcon(getClass().getResource("./resources/food.jpg")));
 		backgroundPicture.setBounds(0, 0, 1266, 683);
 		frame.getContentPane().add(backgroundPicture);
 		
