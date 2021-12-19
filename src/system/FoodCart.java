@@ -26,7 +26,7 @@ public class FoodCart extends JFrame {
 					FoodCart frame = new FoodCart(allOrder);
 					frame.setVisible(true);
 					//set the icon of window frame
-					ImageIcon imgIcon = new ImageIcon(getClass().getResource("./resources/KTF_logo.jpg"));
+					ImageIcon imgIcon = new ImageIcon(getClass().getResource("./resources/KTF_logo-removebg-preview.png"));
 					frame.setIconImage(imgIcon.getImage());
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -348,7 +348,7 @@ public class FoodCart extends JFrame {
 		
 		//create the panel for the header
 		JPanel header = new JPanel();
-		header.setBackground(Color.GRAY);
+		header.setBackground(Color.WHITE);
 		header.setBounds(0, 0, 630, 100);
 		contentPane.add(header);
 		header.setLayout(null);
@@ -362,8 +362,8 @@ public class FoodCart extends JFrame {
 		
 		//show the logo of the KTF
 		JLabel logo = new JLabel("");
-		logo.setIcon(new ImageIcon(FoodCart.class.getResource("/system/resources/KTF_resize.jpg")));
-		logo.setBounds(10, 5, 98, 85);
+		logo.setIcon(new ImageIcon(FoodCart.class.getResource("./resources/KTF_resize-removebg-preview.png")));
+		logo.setBounds(32, 10, 98, 85);
 		header.add(logo);
 		
 		//show the big title of the food cart window

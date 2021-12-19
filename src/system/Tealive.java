@@ -13,6 +13,7 @@ public class Tealive {
     Tealive(){
     	//name of the food
     	//save to array list
+    	//just change the name of food directly
     	ArrayList<String> menuName = new ArrayList<String>();
         menuName.add("Bang Bang Milk Tea");
         menuName.add("Signature Brown Sugar");
@@ -24,6 +25,7 @@ public class Tealive {
 
         //price of the food
     	//save to array list
+        //just change the value of the price directly
         ArrayList<Double> price = new ArrayList<>();
         price.add(7.40);
         price.add(7.40);
@@ -35,6 +37,7 @@ public class Tealive {
 
         //Description of the food
     	//save to array list
+        //just add or change the description directly
         ArrayList<String> menuDesc = new ArrayList<String>();
         menuDesc.add("A locally-upgraded version of the Original Milk Tea, now with brown sugar! Combined with the irresistible chew of pearls and the rich, toffee-like flavor of brown sugar, this drink is unforgettable.");
         menuDesc.add("The Original Pearl Milk Tea tops the chart as the most famous type of milk tea in the world. A must-try for everyone!");
@@ -46,6 +49,8 @@ public class Tealive {
 
         //picture of the food
     	//save to array list
+        //please save the image in /system/resources and add the image name after the path
+        //recommended picture size: 300 x 175 px
         ArrayList<ImageIcon> menuPic = new ArrayList<>();
         menuPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/tl1 resize.jpg")));
         menuPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/tl2 resize.jpg")));
@@ -57,6 +62,8 @@ public class Tealive {
         
         //big picture of the food
     	//save to array list
+        //please save the image in /system/resources and add the image name after the path
+        //recommended picture size: 630 x 215 px
         ArrayList<ImageIcon> bigPic = new ArrayList<>();
 		bigPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/tl1 expand.jpg")));
 		bigPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/tl2 expand.jpg")));

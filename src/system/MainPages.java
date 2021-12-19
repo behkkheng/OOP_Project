@@ -49,9 +49,10 @@ public class MainPages {
 		frame.setResizable(false);
 		frame.setBounds(0, 0, 1280, 720);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		ImageIcon imgIcon = new ImageIcon(getClass().getResource("./resources/KTF_logo.jpg"));
+		ImageIcon imgIcon = new ImageIcon(getClass().getResource("./resources/KTF_logo-removebg-preview.png"));
 		frame.setIconImage(imgIcon.getImage());;
 		
+		//add a panel above the frame
 		JPanel basePanel = new JPanel();
 		basePanel.setBounds(0, 0, 1280, 720);
 		frame.getContentPane().add(basePanel);
@@ -65,15 +66,16 @@ public class MainPages {
 			
 		//logo at the top navigation bar
 		JLabel logo = new JLabel("");
-		logo.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/KTF_resize.jpg")));
-		logo.setBounds(93, 10, 100, 90);
+		logo.setHorizontalAlignment(SwingConstants.CENTER);
+		logo.setIcon(new ImageIcon(MainPages.class.getResource("/system/resources/KTF_resize-removebg-preview.png")));
+		logo.setBounds(73, 0, 112, 103);
 		topNavigationBar.add(logo);
 				
 		//title at the top navigation bar
 		JLabel systemName = new JLabel("Tun Fatimah Residential College Food Ordering System");
 		systemName.setForeground(new Color(0, 0, 0));
-		systemName.setFont(new Font("Gill Sans MT", Font.BOLD, 34));
-		systemName.setBounds(203, 28, 905, 51);
+		systemName.setFont(new Font("Calibri", Font.BOLD, 40));
+		systemName.setBounds(204, 36, 930, 51);
 		topNavigationBar.add(systemName);
 				
 		//background of the top navigation bar
@@ -130,6 +132,7 @@ public class MainPages {
 				
 				//picture of first food of KFC
 				JLabel menuPic1 = new JLabel("");
+				menuPic1.setHorizontalAlignment(SwingConstants.CENTER);
 				menuPic1.setIcon(kfc.getMenuPic(1));
 				menuPic1.setBounds(0, 0, 300, 175);
 				KFCmenu1.add(menuPic1);
@@ -164,6 +167,7 @@ public class MainPages {
 				KFCmenu2.add(kfcMenu2);
 				
 				JLabel menuPic2 = new JLabel("");
+				menuPic2.setHorizontalAlignment(SwingConstants.CENTER);
 				menuPic2.setIcon(kfc.getMenuPic(2));
 				menuPic2.setBounds(0, 0, 300, 175);
 				KFCmenu2.add(menuPic2);
@@ -197,6 +201,7 @@ public class MainPages {
 				KFCmenu3.add(kfcMenu3);
 				
 				JLabel menuPic3 = new JLabel("");
+				menuPic3.setHorizontalAlignment(SwingConstants.CENTER);
 				menuPic3.setIcon(kfc.getMenuPic(3));
 				menuPic3.setBounds(0, 0, 300, 175);
 				KFCmenu3.add(menuPic3);
@@ -296,6 +301,7 @@ public class MainPages {
 				KFCmenu6.add(kfcMenu6);
 				
 				JLabel menuPic6 = new JLabel("");
+				menuPic6.setHorizontalAlignment(SwingConstants.CENTER);
 				menuPic6.setIcon(kfc.getMenuPic(6));
 				menuPic6.setBounds(0, 0, 300, 175);
 				KFCmenu6.add(menuPic6);
@@ -345,6 +351,7 @@ public class MainPages {
 		
 		//Picture for first tealive;s menu
 		JLabel tlMenuPic1 = new JLabel("");
+		tlMenuPic1.setHorizontalAlignment(SwingConstants.CENTER);
 		tlMenuPic1.setIcon(tea.getMenuPic(1));
 		tlMenuPic1.setBounds(0, 0, 300, 175);
 		tlMenu1.add(tlMenuPic1);
@@ -377,6 +384,7 @@ public class MainPages {
 		tlMenu2.add(tlMenu2Price);
 		
 		JLabel tlMenuPic2 = new JLabel("");
+		tlMenuPic2.setHorizontalAlignment(SwingConstants.CENTER);
 		tlMenuPic2.setIcon(tea.getMenuPic(2));
 		tlMenuPic2.setBounds(0, 0, 300, 175);
 		tlMenu2.add(tlMenuPic2);
@@ -410,6 +418,7 @@ public class MainPages {
 		tlMenu3.add(tlMenu3Price);
 		
 		JLabel tlMenuPic3 = new JLabel("");
+		tlMenuPic3.setHorizontalAlignment(SwingConstants.CENTER);
 		tlMenuPic3.setIcon(tea.getMenuPic(3));
 		tlMenuPic3.setBounds(0, 0, 300, 175);
 		tlMenu3.add(tlMenuPic3);
@@ -443,6 +452,7 @@ public class MainPages {
 		tlMenu4.add(tlMenu4Price);
 		
 		JLabel tlMenuPic4 = new JLabel("");
+		tlMenuPic4.setHorizontalAlignment(SwingConstants.CENTER);
 		tlMenuPic4.setIcon(tea.getMenuPic(4));
 		tlMenuPic4.setBounds(0, 0, 300, 175);
 		tlMenu4.add(tlMenuPic4);
@@ -477,6 +487,7 @@ public class MainPages {
 		tlMenu5.add(tlMenu5Price);
 				
 		JLabel tlMenuPic5 = new JLabel("");
+		tlMenuPic5.setHorizontalAlignment(SwingConstants.CENTER);
 		tlMenuPic5.setIcon(tea.getMenuPic(5));
 		tlMenuPic5.setBounds(0, 0, 300, 175);
 		tlMenu5.add(tlMenuPic5);
@@ -510,6 +521,7 @@ public class MainPages {
 		tlMenu6.add(tlMenu6Price);
 		
 		JLabel tlMenuPic6 = new JLabel("");
+		tlMenuPic6.setHorizontalAlignment(SwingConstants.CENTER);
 		tlMenuPic6.setIcon(tea.getMenuPic(6));
 		tlMenuPic6.setBounds(0, 0, 300, 175);
 		tlMenu6.add(tlMenuPic6);
@@ -555,6 +567,7 @@ public class MainPages {
 		
 		//Picture of the first subaidah food
 		JLabel sbdMenuPic1 = new JLabel("");
+		sbdMenuPic1.setHorizontalAlignment(SwingConstants.CENTER);
 		sbdMenuPic1.setIcon(sbd.getMenuPic(1));
 		sbdMenuPic1.setBounds(0, 0, 300, 175);
 		sbdMenu_1.add(sbdMenuPic1);
@@ -588,6 +601,7 @@ public class MainPages {
 		sbdMenu_2.add(sbdMenu2Price);
 		
 		JLabel sbdMenuPic2 = new JLabel("");
+		sbdMenuPic2.setHorizontalAlignment(SwingConstants.CENTER);
 		sbdMenuPic2.setIcon(sbd.getMenuPic(2));
 		sbdMenuPic2.setBounds(0, 0, 300, 175);
 		sbdMenu_2.add(sbdMenuPic2);
@@ -621,6 +635,7 @@ public class MainPages {
 		sbdMenu_3.add(sbdMenu3Price);
 		
 		JLabel sbdMenuPic3 = new JLabel("");
+		sbdMenuPic3.setHorizontalAlignment(SwingConstants.CENTER);
 		sbdMenuPic3.setIcon(sbd.getMenuPic(3));
 		sbdMenuPic3.setBounds(0, 0, 300, 175);
 		sbdMenu_3.add(sbdMenuPic3);
@@ -654,6 +669,7 @@ public class MainPages {
 		sbdMenu_4.add(sbdMenu4Price);
 		
 		JLabel sbdMenuPic4 = new JLabel("");
+		sbdMenuPic4.setHorizontalAlignment(SwingConstants.CENTER);
 		sbdMenuPic4.setIcon(sbd.getMenuPic(4));
 		sbdMenuPic4.setBounds(0, 0, 300, 175);
 		sbdMenu_4.add(sbdMenuPic4);

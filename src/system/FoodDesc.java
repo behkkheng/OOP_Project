@@ -36,6 +36,7 @@ public class FoodDesc extends JFrame {
 
 	//Create the frame.
 	public FoodDesc(String menuName, double menuPrice, String menuDesc, ImageIcon menuPic, LinkedList<Node> allOrder) {
+		setResizable(false);
 		addWindowListener(new WindowAdapter() {
 			@Override
 			public void windowDeactivated(WindowEvent e) {
@@ -53,7 +54,7 @@ public class FoodDesc extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 640, 600);
 		setTitle("Description of food");
-		ImageIcon imgIcon = new ImageIcon(getClass().getResource("./resources/KTF_logo.jpg"));
+		ImageIcon imgIcon = new ImageIcon(getClass().getResource("./resources/KTF_logo-removebg-preview.png"));
 		setIconImage(imgIcon.getImage());
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));

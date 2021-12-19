@@ -13,6 +13,7 @@ public class Subaidah {
     Subaidah(){
     	//name of the food
     	//save to array list
+    	//just change the name of food directly
         ArrayList<String> menuName = new ArrayList<String>();
         menuName.add("Nasi Lemak Daun Pisang");
         menuName.add("Satay");
@@ -24,6 +25,7 @@ public class Subaidah {
 
         //price of the food
         //save to array list
+        //just change the value of the price directly
         ArrayList<Double> price = new ArrayList<Double>();
         price.add(12.40);
         price.add(1.00);
@@ -35,17 +37,20 @@ public class Subaidah {
 
         //description of the food
         //save to array list
+        //just add or change the description directly
         ArrayList<String> menuDesc = new ArrayList<String>();
         menuDesc.add("A famous breakfast for Malaysian.");
         menuDesc.add("Chicken satay with delicious peanut sauces");
         menuDesc.add("Noodle soup");
         menuDesc.add("A popular flat bread in Malaysia.");
         menuDesc.add("Hot milk tea beverage");
-        menuDesc.add(null);
+        menuDesc.add("");
         this.menuDesc = menuDesc;
 
         //picture of the food
         //save to array list
+        //please save the image in /system/resources and add the image name after the path
+        //recommended picture size: 300 x 175 px
         ArrayList<ImageIcon> menuPic = new ArrayList<>();
         menuPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/sbd1 resize.jpg")));
         menuPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/sbd2 resize.jpg")));
@@ -57,6 +62,8 @@ public class Subaidah {
         
         //big picture of the food
         //save to array list
+        //please save the image in /system/resources and add the image name after the path
+        //recommended picture size: 630 x 215 px
         ArrayList<ImageIcon> bigPic = new ArrayList<>();
 		bigPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/sbd1 expand.jpg")));
 		bigPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/sbd2 expand.jpg")));
