@@ -1,14 +1,9 @@
 package system;
 
 import java.awt.*;
-
 import javax.swing.*;
 import javax.swing.border.Border;
-import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
-import javax.swing.plaf.basic.BasicBorders;
-import javax.swing.text.AttributeSet.ColorAttribute;
-
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
@@ -25,9 +20,7 @@ public class FoodDesc extends JFrame {
 	private int quantity;
 	private static LinkedList<Node> allOrder;
 
-	/**
-	 * Launch the application.
-	 */
+	//Launch the application.
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -41,9 +34,7 @@ public class FoodDesc extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+	//Create the frame.
 	public FoodDesc(String menuName, double menuPrice, String menuDesc, ImageIcon menuPic, LinkedList<Node> allOrder) {
 		addWindowListener(new WindowAdapter() {
 			@Override
@@ -58,6 +49,7 @@ public class FoodDesc extends JFrame {
 		this.quantity = 0;
 		this.allOrder = allOrder;
 
+		//set the title, icon and size of the frame
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 640, 600);
 		setTitle("Description of food");
@@ -68,34 +60,41 @@ public class FoodDesc extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		// Panel for bottom bar (to put spinner, quantity word and add to cart button)
 		JPanel bottomPanel = new JPanel();
 		bottomPanel.setBounds(0, 500, 630, 71);
 		contentPane.add(bottomPanel);
 		bottomPanel.setLayout(null);
 
+		//show spinner at the bottom of the window
 		SpinnerModel spinnerModel = new SpinnerNumberModel(1, 0, 50, 1);
 		JSpinner spinner = new JSpinner(spinnerModel);
 		((JSpinner.NumberEditor) spinner.getEditor()).getFormat().setMaximumFractionDigits(1);
 		spinner.setFont(new Font("Segoe UI", Font.PLAIN, 17));
 		spinner.setBounds(108, 15, 72, 39);
-
 		bottomPanel.add(spinner);
 		
+		//show Quantity: at the bottom of the window
 		JLabel quantityLabel = new JLabel("Quantity:");
 		quantityLabel.setFont(new Font("Segoe UI", Font.PLAIN, 22));
 		quantityLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		quantityLabel.setBounds(10, 15, 98, 39);
 		bottomPanel.add(quantityLabel);
 		
+		//add to cart button
+		//if nothing had been added then print nothing had been add
+		//if add successfully then print add to cart successfully
 		JButton addToCart = new JButton("Add To Cart");
 		addToCart.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if ((int)spinner.getValue()==0){
+					//if the value of spinner is 0 then beep a sound and show a message dialog
 					Toolkit.getDefaultToolkit().beep();
 					JOptionPane.showMessageDialog(null, "Nothing had been added!", "Warning", JOptionPane.INFORMATION_MESSAGE);
 				}
 				else{
+					//add the food into the linked list if added successfully
 					Toolkit.getDefaultToolkit().beep();
 					JOptionPane.showMessageDialog(null, "Add to cart successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
 					dispose();
@@ -105,21 +104,22 @@ public class FoodDesc extends JFrame {
 				}
 			}
 		});
-
-		//deco
-		Border blackLine = BorderFactory.createLineBorder(Color.black);
-		
 		addToCart.setBounds(443, 15, 177, 41);
 		bottomPanel.add(addToCart);
 		addToCart.setBackground(Color.GREEN);
 		addToCart.setForeground(Color.WHITE);
 		addToCart.setFont(new Font("Segoe UI", Font.BOLD, 22));
+
+		//border decoration
+		Border blackLine = BorderFactory.createLineBorder(Color.black);
 		
+		//panel to put all the information of food
 		JPanel showDesc = new JPanel();
 		showDesc.setBounds(0, 0, 630, 500);
 		contentPane.add(showDesc);
 		showDesc.setLayout(null);
 		
+		//show the description of the food
 		JLabel foodDesc = new JLabel(menuDesc);
 		foodDesc.setBorder(blackLine);
 		foodDesc.setBackground(Color.WHITE);
@@ -128,14 +128,15 @@ public class FoodDesc extends JFrame {
 		foodDesc.setBounds(0, 285, 630, 215);
 		showDesc.add(foodDesc);
 		
+		//show the picture of the food
 		JLabel foodImage = new JLabel("");
 		foodImage.setHorizontalAlignment(SwingConstants.CENTER);
 		foodImage.setIcon(menuPic);
 		foodImage.setBounds(0, 0, 630, 205);
 		showDesc.add(foodImage);
 		
+		//show the name of the food
 		JLabel foodName = new JLabel(menuName);
-	
 		foodName.setBorder(blackLine);
 		foodName.setBackground(Color.WHITE);
 		foodName.setFont(new Font("Segoe UI", Font.PLAIN, 22));
@@ -143,6 +144,8 @@ public class FoodDesc extends JFrame {
 		foodName.setBounds(0, 205, 630, 40);
 		showDesc.add(foodName);
 		
+		
+		//show the unit price of food
 		JLabel foodPrice = new JLabel("Unit Price: RM "+menuPrice);
 		foodPrice.setBorder(blackLine);
 		foodPrice.setBackground(Color.WHITE);
