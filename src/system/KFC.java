@@ -15,8 +15,8 @@ public class KFC {
     	//save to array list
 		ArrayList<String> menuName = new ArrayList<String>();
 		menuName.add("Cheezy Wedges");
-		menuName.add("3-pc Chicken");
-		menuName.add("9-pc nugget");
+		menuName.add("3-pc Chickens");
+		menuName.add("9-pc Chickens");
 		menuName.add("Coleslaw");
 		menuName.add("Party box");
 		menuName.add("Nasi lemak");
