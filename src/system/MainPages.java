@@ -487,6 +487,7 @@ public class MainPages {
 		tlMenu5.add(tlMenu5Price);
 				
 		JLabel tlMenuPic5 = new JLabel("");
+		tlMenuPic5.setVerticalAlignment(SwingConstants.TOP);
 		tlMenuPic5.setHorizontalAlignment(SwingConstants.CENTER);
 		tlMenuPic5.setIcon(tea.getMenuPic(5));
 		tlMenuPic5.setBounds(0, 0, 300, 175);
@@ -521,6 +522,7 @@ public class MainPages {
 		tlMenu6.add(tlMenu6Price);
 		
 		JLabel tlMenuPic6 = new JLabel("");
+		tlMenuPic6.setVerticalAlignment(SwingConstants.TOP);
 		tlMenuPic6.setHorizontalAlignment(SwingConstants.CENTER);
 		tlMenuPic6.setIcon(tea.getMenuPic(6));
 		tlMenuPic6.setBounds(0, 0, 300, 175);

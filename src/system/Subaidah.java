@@ -20,7 +20,7 @@ public class Subaidah {
         menuName.add("Mee Rebus");
         menuName.add("Roti Canai");
         menuName.add("Teh Tarik");
-        menuName.add("");
+        menuName.add("Bihun Singapore");
         this.menuName = menuName;
 
         //price of the food
@@ -32,7 +32,7 @@ public class Subaidah {
         price.add(8.30);
         price.add(1.00);
         price.add(3.00);
-        price.add(0.00);
+        price.add(5.00);
         this.price = price;
 
         //description of the food
@@ -44,7 +44,7 @@ public class Subaidah {
         menuDesc.add("Noodle soup");
         menuDesc.add("A popular flat bread in Malaysia.");
         menuDesc.add("Hot milk tea beverage");
-        menuDesc.add("");
+        menuDesc.add("Bihun goreng");
         this.menuDesc = menuDesc;
 
         //picture of the food
@@ -57,7 +57,7 @@ public class Subaidah {
         menuPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/sbd3 resize.jpg")));
         menuPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/sbd4 resize.jpg")));
         menuPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/sbd5 resize.jpg")));
-        menuPic.add(new ImageIcon(MainPages.class.getResource("")));
+        menuPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/sbd6 resize.jpg")));
         this.menuPic = menuPic;
         
         //big picture of the food
@@ -70,7 +70,7 @@ public class Subaidah {
 		bigPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/sbd3 expand.jpg")));
 		bigPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/sbd4 expand.jpg")));
 		bigPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/sbd5 expand.jpg")));
-		bigPic.add(new ImageIcon(MainPages.class.getResource("")));
+		bigPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/sbd6 expand.jpg")));
 		this.bigPic = bigPic;
     }
 

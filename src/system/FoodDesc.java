@@ -8,6 +8,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.text.DecimalFormat;
 import java.util.LinkedList;
 
 public class FoodDesc extends JFrame {
@@ -49,6 +50,7 @@ public class FoodDesc extends JFrame {
 		this.menuPic = menuPic;
 		this.quantity = 0;
 		this.allOrder = allOrder;
+		DecimalFormat df = new DecimalFormat( "##.00" );
 
 		//set the title, icon and size of the frame
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -121,10 +123,11 @@ public class FoodDesc extends JFrame {
 		showDesc.setLayout(null);
 		
 		//show the description of the food
-		JLabel foodDesc = new JLabel(menuDesc);
+		JTextArea foodDesc = new JTextArea(menuDesc);
+		foodDesc.setLineWrap(true);
 		foodDesc.setBorder(blackLine);
 		foodDesc.setBackground(Color.WHITE);
-		foodDesc.setHorizontalAlignment(SwingConstants.CENTER);
+		foodDesc.setWrapStyleWord(true);
 		foodDesc.setFont(new Font("Segoe UI", Font.PLAIN, 22));
 		foodDesc.setBounds(0, 285, 630, 215);
 		showDesc.add(foodDesc);
@@ -147,7 +150,7 @@ public class FoodDesc extends JFrame {
 		
 		
 		//show the unit price of food
-		JLabel foodPrice = new JLabel("Unit Price: RM "+menuPrice);
+		JLabel foodPrice = new JLabel("Unit Price: RM "+df.format(menuPrice));
 		foodPrice.setBorder(blackLine);
 		foodPrice.setBackground(Color.WHITE);
 		foodPrice.setHorizontalAlignment(SwingConstants.CENTER);

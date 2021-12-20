@@ -19,8 +19,8 @@ public class Tealive {
         menuName.add("Signature Brown Sugar");
         menuName.add("MAMEE x tealive");
         menuName.add("Strawberry Pop Pop Pearls");
-        menuName.add("");
-        menuName.add("");
+        menuName.add("Malty Smoothies (Horlicks)");
+        menuName.add("Sparkling Lychee with 3Q Jelly");
         this.menuName = menuName;
 
         //price of the food
@@ -31,8 +31,8 @@ public class Tealive {
         price.add(7.40);
         price.add(15.50);
         price.add(10.99);
-        price.add(0.00);
-        price.add(0.00);
+        price.add(11.80);
+        price.add(9.40);
         this.price = price;
 
         //Description of the food
@@ -43,8 +43,8 @@ public class Tealive {
         menuDesc.add("The Original Pearl Milk Tea tops the chart as the most famous type of milk tea in the world. A must-try for everyone!");
         menuDesc.add("You can eat it HOT, or enjoy it COLD; but one thing's for sure, the Spicy Mi Boba is not your usual cup of noodle.");
         menuDesc.add("Pop Pop Pearls introduces pearls that’ll ‘pop’ in your mouth as you bite into them.");
-        menuDesc.add("");
-        menuDesc.add("");
+        menuDesc.add("Cool off with our one-and-only malt based smoothie, packed with milky and nutritious goodness. Great to suppress hunger!");
+        menuDesc.add("A top favourite, this sparkling beverage is amongst our most recommended! Try it with 3Q Jelly which combines sago, coconut jelly and pearl so you’ll be in ultimate chewy paradise.");
         this.menuDesc = menuDesc;
 
         //picture of the food
@@ -56,8 +56,8 @@ public class Tealive {
         menuPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/tl2 resize.jpg")));
         menuPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/tl3 resize.jpg")));
         menuPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/tl4 resize.jpg")));
-        menuPic.add(new ImageIcon(MainPages.class.getResource("")));
-        menuPic.add(new ImageIcon(MainPages.class.getResource("")));
+        menuPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/tl5 resize.png")));
+        menuPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/tl6 resize.png")));
         this.menuPic = menuPic;
         
         //big picture of the food
@@ -69,8 +69,8 @@ public class Tealive {
 		bigPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/tl2 expand.jpg")));
 		bigPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/tl3 expand.jpg")));
 		bigPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/tl4 expand.jpg")));
-		bigPic.add(new ImageIcon(MainPages.class.getResource("")));
-		bigPic.add(new ImageIcon(MainPages.class.getResource("")));
+		bigPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/tl5 expand.png")));
+		bigPic.add(new ImageIcon(MainPages.class.getResource("/system/resources/tl6 expand.png")));
 		this.bigPic = bigPic;
     }
 
