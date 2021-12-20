@@ -130,6 +130,7 @@ public class FoodDesc extends JFrame {
 		foodDesc.setWrapStyleWord(true);
 		foodDesc.setFont(new Font("Segoe UI", Font.PLAIN, 22));
 		foodDesc.setBounds(0, 285, 630, 215);
+		foodDesc.setEditable(false);
 		showDesc.add(foodDesc);
 		
 		//show the picture of the food
