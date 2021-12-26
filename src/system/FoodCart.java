@@ -62,9 +62,15 @@ public class FoodCart extends JFrame {
 					JOptionPane.showMessageDialog(null, "Nothing had been added!", "Success!", JOptionPane.INFORMATION_MESSAGE);
 					dispose();
 				}
-				else{ // if gt order in linked list then show dialog window success and delete all the order in the linked list
-					JOptionPane.showMessageDialog(null, "Order Success! Please wait a while for preparing food!", "Success!", JOptionPane.INFORMATION_MESSAGE);
+				else{ // if gt order in linked list then show dialog window success, write the orders and waiting
+					  // number in a file call orders.txt and delete all the order in the linked list
+					  // waiting number append by 1 for each successful orders
+					WaitingNumber.waitingNumber++;
+					JOptionPane.showMessageDialog(null, "Order Success! Please make your payment at the counter!\nYour order number is "+WaitingNumber.waitingNumber+".", "Success!", JOptionPane.INFORMATION_MESSAGE);
 					Order order = new Order(allOrder);
+					OutputOrders outputOrders = new OutputOrders(allOrder, WaitingNumber.waitingNumber);
+					String[] args = new String[1];
+					OutputOrders.main(args);
 					order.deleteAll(allOrder);
 					dispose();
 				}

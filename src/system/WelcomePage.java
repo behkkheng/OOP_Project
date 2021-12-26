@@ -7,6 +7,10 @@ import java.awt.Font;
 import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 public class WelcomePage extends JFrame{
 
@@ -36,6 +40,16 @@ public class WelcomePage extends JFrame{
 
 	//Initialize the contents of the frame.
 	private void initialize() {
+		//create a file that store all the orders confirm today
+		Date date = new Date();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd") ;
+		File ordersTXT = new File(dateFormat.format(date)+" orders.txt");
+		try{
+			ordersTXT.createNewFile();
+		} catch (IOException e){
+			System.out.println("Error! Please restart the system.");
+		}
+
 		//set the size, title and icon of the window frame
 		frame = new JFrame("Food ordering system");
 		frame.setBounds(100, 100, 1280, 720);
