@@ -70,7 +70,7 @@ public class FoodDesc extends JFrame {
 		bottomPanel.setLayout(null);
 
 		//show spinner at the bottom of the window
-		SpinnerModel spinnerModel = new SpinnerNumberModel(1, 1, 50, 1);
+		SpinnerModel spinnerModel = new SpinnerNumberModel(1, 0, 50, 1);
 		JSpinner spinner = new JSpinner(spinnerModel);
 		((JSpinner.NumberEditor) spinner.getEditor()).getFormat().setMaximumFractionDigits(1);
 		spinner.setFont(new Font("Segoe UI", Font.PLAIN, 17));
