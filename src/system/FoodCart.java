@@ -37,7 +37,7 @@ public class FoodCart extends JFrame {
 	public FoodCart(LinkedList<Node> allOrder) {
 		Order order = new Order(allOrder);
 		int numberOfNode = allOrder.size();
-		DecimalFormat df = new DecimalFormat( "##.00" );
+		DecimalFormat df = new DecimalFormat( "#0.00" );
 		this.allOrder = allOrder;
 		
 		//set the title of the frame
@@ -667,7 +667,7 @@ public class FoodCart extends JFrame {
 			}
 		});
 		clearAllButton.setFont(new Font("Segoe UI", Font.PLAIN, 25));
-		clearAllButton.setBounds(96, 490, 133, 41);
+		clearAllButton.setBounds(96, 487, 133, 46);
 		contentPane.add(clearAllButton);
 		
 		//create the panel for the header
