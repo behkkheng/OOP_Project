@@ -1,12 +1,10 @@
 package system;
 
-import java.awt.EventQueue;
+import java.awt.*;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-import java.awt.Color;
 import javax.swing.table.DefaultTableModel;
-import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.text.DecimalFormat;
@@ -66,9 +64,10 @@ public class FoodCart extends JFrame {
 					  // number in a file call orders.txt and delete all the order in the linked list
 					  // waiting number append by 1 for each successful orders
 					WaitingNumber.waitingNumber++;
+					Toolkit.getDefaultToolkit().beep();
 					JOptionPane.showMessageDialog(null, "Order Success! Please make your payment at the counter!\nYour order number is "+WaitingNumber.waitingNumber+".", "Success!", JOptionPane.INFORMATION_MESSAGE);
 					Order order = new Order(allOrder);
-					OutputOrders outputOrders = new OutputOrders(allOrder, WaitingNumber.waitingNumber);
+					new OutputOrders(allOrder, WaitingNumber.waitingNumber);
 					String[] args = new String[1];
 					OutputOrders.main(args);
 					order.deleteAll(allOrder);
@@ -79,12 +78,10 @@ public class FoodCart extends JFrame {
 		confirmButton.setFont(new Font("Segoe UI", Font.PLAIN, 25));
 		confirmButton.setBounds(410, 487, 114, 46);
 		contentPane.add(confirmButton);
-		
-		
-		
+
 		//16th delete button
 		//subtract the quantity of order by one
-		JButton delete16 = new JButton("Delete");
+		JButton delete16 = new JButton("-");
 		delete16.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -94,12 +91,14 @@ public class FoodCart extends JFrame {
 						FoodCart.main(args);
 					}
 		}});
-		delete16.setBounds(516, 422, 100, 15);
-		contentPane.add(delete16);
+		delete16.setBounds(516, 421, 99, 15);
+		if (numberOfNode>=16) {
+			contentPane.add(delete16);
+		}
 				
 		//15th delete button
 		//subtract the quantity of order by one
-		JButton delete15 = new JButton("Delete");
+		JButton delete15 = new JButton("-");
 		delete15.addMouseListener(new MouseAdapter() {
 			@Override
 					public void mouseClicked(MouseEvent e) {
@@ -110,12 +109,14 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete15.setBounds(516, 407, 100, 15);
-		contentPane.add(delete15);
+		delete15.setBounds(516, 406, 99, 15);
+		if (numberOfNode>=15) {
+			contentPane.add(delete15);
+		}
 				
 		//14th delete button
 		//subtract the quantity of order by one
-		JButton delete14 = new JButton("Delete");
+		JButton delete14 = new JButton("-");
 		delete14.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -126,13 +127,15 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete14.setBounds(516, 392, 100, 15);
-		contentPane.add(delete14);
+		delete14.setBounds(516, 391, 99, 15);
+		if (numberOfNode>=14) {
+			contentPane.add(delete14);
+		}
 		
 		
 		//13th delete button
 		//subtract the quantity of order by one
-		JButton delete13 = new JButton("Delete");
+		JButton delete13 = new JButton("-");
 		delete13.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -143,13 +146,15 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete13.setBounds(516, 377, 100, 15);
-		contentPane.add(delete13);
+		delete13.setBounds(516, 376, 99, 15);
+		if (numberOfNode>=13) {
+			contentPane.add(delete13);
+		}
 
 		
 		//12th delete button
 		//subtract the quantity of order by one
-		JButton delete12 = new JButton("Delete");
+		JButton delete12 = new JButton("-");
 		delete12.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -160,12 +165,14 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete12.setBounds(516, 362, 100, 15);
-		contentPane.add(delete12);
+		delete12.setBounds(516, 361, 99, 15);
+		if (numberOfNode>=12) {
+			contentPane.add(delete12);
+		}
 		
 		//11th delete button
 		//subtract the quantity of order by one
-		JButton delete11 = new JButton("Delete");
+		JButton delete11 = new JButton("-");
 		delete11.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -176,12 +183,14 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete11.setBounds(516, 347, 100, 15);
-		contentPane.add(delete11);
+		delete11.setBounds(516, 346, 99, 15);
+		if (numberOfNode>=11) {
+			contentPane.add(delete11);
+		}
 		
 		//10th delete button
 		//subtract the quantity of order by one
-		JButton delete10 = new JButton("Delete");
+		JButton delete10 = new JButton("-");
 		delete10.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -192,12 +201,14 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete10.setBounds(516, 332, 100, 15);
-		contentPane.add(delete10);
+		delete10.setBounds(516, 331, 99, 15);
+		if (numberOfNode>=10) {
+			contentPane.add(delete10);
+		}
 		
 		//9th delete button
 		//subtract the quantity of order by one
-		JButton delete9 = new JButton("Delete");
+		JButton delete9 = new JButton("-");
 		delete9.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -208,12 +219,14 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete9.setBounds(516, 317, 100, 15);
-		contentPane.add(delete9);
+		delete9.setBounds(516, 316, 99, 15);
+		if (numberOfNode>=9) {
+			contentPane.add(delete9);
+		}
 		
 		//8th delete button
 		//subtract the quantity of order by one
-		JButton delete8 = new JButton("Delete");
+		JButton delete8 = new JButton("-");
 		delete8.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -224,12 +237,14 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete8.setBounds(516, 302, 100, 15);
-		contentPane.add(delete8);
+		delete8.setBounds(516, 301, 99, 15);
+		if (numberOfNode>=8) {
+			contentPane.add(delete8);
+		}
 		
 		//7th delete button
 		//subtract the quantity of order by one
-		JButton delete7 = new JButton("Delete");
+		JButton delete7 = new JButton("-");
 		delete7.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -240,12 +255,14 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete7.setBounds(516, 287, 100, 15);
-		contentPane.add(delete7);
+		delete7.setBounds(516, 286, 99, 15);
+		if (numberOfNode>=7) {
+			contentPane.add(delete7);
+		}
 		
 		//6th delete button
 		//subtract the quantity of order by one
-		JButton delete6 = new JButton("Delete");
+		JButton delete6 = new JButton("-");
 		delete6.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -256,12 +273,14 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete6.setBounds(516, 272, 100, 15);
-		contentPane.add(delete6);
+		delete6.setBounds(516, 271, 99, 15);
+		if (numberOfNode>=6) {
+			contentPane.add(delete6);
+		}
 		
 		//5th delete button
 		//subtract the quantity of order by one
-		JButton delete5 = new JButton("Delete");
+		JButton delete5 = new JButton("-");
 		delete5.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -272,12 +291,14 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete5.setBounds(516, 257, 100, 15);
-		contentPane.add(delete5);
+		delete5.setBounds(516, 256, 99, 15);
+		if (numberOfNode>=5) {
+			contentPane.add(delete5);
+		}
 		
 		//4th delete button
 		//subtract the quantity of order by one
-		JButton delete4 = new JButton("Delete");
+		JButton delete4 = new JButton("-");
 		delete4.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -288,12 +309,14 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete4.setBounds(516, 242, 100, 15);
-		contentPane.add(delete4);
+		delete4.setBounds(516, 241, 99, 15);
+		if (numberOfNode>=4) {
+			contentPane.add(delete4);
+		}
 		
 		//3rd delete button
 		//subtract the quantity of order by one
-		JButton delete3 = new JButton("Delete");
+		JButton delete3 = new JButton("-");
 		delete3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -304,12 +327,14 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete3.setBounds(516, 227, 100, 15);
-		contentPane.add(delete3);
+		delete3.setBounds(516, 226, 99, 15);
+		if (numberOfNode>=3) {
+			contentPane.add(delete3);
+		}
 		
 		//2th delete button
 		//subtract the quantity of order by one
-		JButton delete2 = new JButton("Delete");
+		JButton delete2 = new JButton("-");
 		delete2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -320,12 +345,14 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete2.setBounds(516, 212, 100, 15);
-		contentPane.add(delete2);
+		delete2.setBounds(516, 211, 99, 15);
+		if (numberOfNode>=2) {
+			contentPane.add(delete2);
+		}
 		
 		//1st delete button
 		//subtract the quantity of order by one
-		JButton delete1 = new JButton("Delete");
+		JButton delete1 = new JButton("-");
 		delete1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -336,8 +363,10 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete1.setBounds(516, 197, 100, 15);
-		contentPane.add(delete1);
+		delete1.setBounds(516, 196, 99, 15);
+		if (numberOfNode>=1) {
+			contentPane.add(delete1);
+		}
 		
 		
 		//create a cancel button that dispose the window after clicked
@@ -404,9 +433,15 @@ public class FoodCart extends JFrame {
 		//create a table and put the model into the table
 		JTable table = new JTable(model);
 		table.setBounds(16,181,599,260);
-		table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+		table.getColumnModel().getColumn(0).setPreferredWidth(5);
+		table.getColumnModel().getColumn(1).setPreferredWidth(210);
+		table.getColumnModel().getColumn(2).setPreferredWidth(50);
+		table.getColumnModel().getColumn(3).setPreferredWidth(50);
+		table.getColumnModel().getColumn(4).setPreferredWidth(50);
 		table.setCellSelectionEnabled(true);
 		table.setModel(model);
+		table.setRowHeight(15);
+
 		contentPane.add(table);
 	}
 }
