@@ -91,7 +91,7 @@ public class FoodCart extends JFrame {
 						FoodCart.main(args);
 					}
 		}});
-		delete16.setBounds(516, 421, 99, 15);
+		delete16.setBounds(566, 421, 49, 15);
 		if (numberOfNode>=16) {
 			contentPane.add(delete16);
 		}
@@ -109,7 +109,7 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete15.setBounds(516, 406, 99, 15);
+		delete15.setBounds(566, 406, 49, 15);
 		if (numberOfNode>=15) {
 			contentPane.add(delete15);
 		}
@@ -127,7 +127,7 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete14.setBounds(516, 391, 99, 15);
+		delete14.setBounds(566, 391, 49, 15);
 		if (numberOfNode>=14) {
 			contentPane.add(delete14);
 		}
@@ -146,7 +146,7 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete13.setBounds(516, 376, 99, 15);
+		delete13.setBounds(566, 376, 49, 15);
 		if (numberOfNode>=13) {
 			contentPane.add(delete13);
 		}
@@ -165,7 +165,7 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete12.setBounds(516, 361, 99, 15);
+		delete12.setBounds(566, 361, 49, 15);
 		if (numberOfNode>=12) {
 			contentPane.add(delete12);
 		}
@@ -183,7 +183,7 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete11.setBounds(516, 346, 99, 15);
+		delete11.setBounds(566, 346, 49, 15);
 		if (numberOfNode>=11) {
 			contentPane.add(delete11);
 		}
@@ -201,7 +201,7 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete10.setBounds(516, 331, 99, 15);
+		delete10.setBounds(566, 331, 49, 15);
 		if (numberOfNode>=10) {
 			contentPane.add(delete10);
 		}
@@ -219,7 +219,7 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete9.setBounds(516, 316, 99, 15);
+		delete9.setBounds(566, 316, 49, 15);
 		if (numberOfNode>=9) {
 			contentPane.add(delete9);
 		}
@@ -237,7 +237,7 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete8.setBounds(516, 301, 99, 15);
+		delete8.setBounds(566, 301, 49, 15);
 		if (numberOfNode>=8) {
 			contentPane.add(delete8);
 		}
@@ -255,7 +255,7 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete7.setBounds(516, 286, 99, 15);
+		delete7.setBounds(566, 286, 49, 15);
 		if (numberOfNode>=7) {
 			contentPane.add(delete7);
 		}
@@ -273,7 +273,7 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete6.setBounds(516, 271, 99, 15);
+		delete6.setBounds(566, 271, 49, 15);
 		if (numberOfNode>=6) {
 			contentPane.add(delete6);
 		}
@@ -291,7 +291,7 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete5.setBounds(516, 256, 99, 15);
+		delete5.setBounds(566, 256, 49, 15);
 		if (numberOfNode>=5) {
 			contentPane.add(delete5);
 		}
@@ -309,7 +309,7 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete4.setBounds(516, 241, 99, 15);
+		delete4.setBounds(566, 241, 49, 15);
 		if (numberOfNode>=4) {
 			contentPane.add(delete4);
 		}
@@ -327,7 +327,7 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete3.setBounds(516, 226, 99, 15);
+		delete3.setBounds(566, 226, 49, 15);
 		if (numberOfNode>=3) {
 			contentPane.add(delete3);
 		}
@@ -345,7 +345,7 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete2.setBounds(516, 211, 99, 15);
+		delete2.setBounds(566, 211, 49, 15);
 		if (numberOfNode>=2) {
 			contentPane.add(delete2);
 		}
@@ -363,23 +363,312 @@ public class FoodCart extends JFrame {
 				}
 			}
 		});
-		delete1.setBounds(516, 196, 99, 15);
+		delete1.setBounds(566, 196, 49, 15);
 		if (numberOfNode>=1) {
 			contentPane.add(delete1);
 		}
 		
-		
-		//create a cancel button that dispose the window after clicked
-		JButton cancelButton = new JButton("Cancel");
-		cancelButton.addMouseListener(new MouseAdapter() {
+		//1st add button
+		//add the quantity of order by one
+		JButton add1 = new JButton("+");
+		add1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				dispose();
+				if (numberOfNode>=1){
+					order.addMenu(allOrder.get(0).menuName, 1, allOrder.get(0).price);
+					dispose();
+					FoodCart.main(args);
+				}
 			}
 		});
-		cancelButton.setFont(new Font("Segoe UI", Font.PLAIN, 25));
-		cancelButton.setBounds(96, 490, 124, 41);
-		contentPane.add(cancelButton);
+		add1.setBounds(516, 196, 50, 15);
+		if (numberOfNode>=1) {
+			contentPane.add(add1);
+		}
+		
+		//2nd add button
+		//add the quantity of order by one
+		JButton add2 = new JButton("+");
+		add2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (numberOfNode>=2){
+					order.addMenu(allOrder.get(1).menuName, 1, allOrder.get(1).price);
+					dispose();
+					FoodCart.main(args);
+				}
+			}
+		});
+		add2.setBounds(516, 211, 50, 15);
+		if (numberOfNode>=2) {
+			contentPane.add(add2);
+		}
+		
+		//3rd add button
+		//add the quantity of order by one
+		JButton add3 = new JButton("+");
+		add3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (numberOfNode>=3){
+					order.addMenu(allOrder.get(2).menuName, 1, allOrder.get(2).price);
+					dispose();
+					FoodCart.main(args);
+				}
+			}
+		});
+		add3.setBounds(516, 226, 50, 15);
+		if (numberOfNode>=3) {
+			contentPane.add(add3);
+		}
+		
+		//4th add button
+		//add the quantity of order by one
+		JButton add4 = new JButton("+");
+		add4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (numberOfNode>=4){
+					order.addMenu(allOrder.get(3).menuName, 1, allOrder.get(3).price);
+					dispose();
+					FoodCart.main(args);
+				}
+			}
+		});
+		add4.setBounds(516, 241, 50, 15);
+		if (numberOfNode>=4) {
+			contentPane.add(add4);
+		}
+		
+		//5th add button
+		//add the quantity of order by one
+		JButton add5 = new JButton("+");
+		add5.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (numberOfNode>=5){
+					order.addMenu(allOrder.get(4).menuName, 1, allOrder.get(4).price);
+					dispose();
+					FoodCart.main(args);
+				}
+			}
+		});
+		add5.setBounds(516, 256, 50, 15);
+		if (numberOfNode>=5) {
+			contentPane.add(add5);
+		}
+		
+		//6th add button
+		//add the quantity of order by one
+		JButton add6 = new JButton("+");
+		add6.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (numberOfNode>=6){
+					order.addMenu(allOrder.get(5).menuName, 1, allOrder.get(5).price);
+					dispose();
+					FoodCart.main(args);
+				}
+			}
+		});
+		add6.setBounds(516, 271, 50, 15);
+		if (numberOfNode>=6) {
+			contentPane.add(add6);
+		}
+		
+		//7th add button
+		//add the quantity of order by one
+		JButton add7 = new JButton("+");
+		add7.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (numberOfNode>=7){
+					order.addMenu(allOrder.get(6).menuName, 1, allOrder.get(6).price);
+					dispose();
+					FoodCart.main(args);
+				}
+			}
+		});
+		add7.setBounds(516, 286, 50, 15);
+		if (numberOfNode>=7) {
+			contentPane.add(add7);
+		}
+		
+		//8th add button
+		//add the quantity of order by one
+		JButton add8 = new JButton("+");
+		add8.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (numberOfNode>=8){
+					order.addMenu(allOrder.get(7).menuName, 1, allOrder.get(7).price);
+					dispose();
+					FoodCart.main(args);
+				}
+			}
+		});
+		add8.setBounds(516, 301, 50, 15);
+		if (numberOfNode>=8) {
+			contentPane.add(add8);
+		}
+		
+		//9th add button
+		//add the quantity of order by one
+		JButton add9 = new JButton("+");
+		add9.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (numberOfNode>=9){
+					order.addMenu(allOrder.get(8).menuName, 1, allOrder.get(8).price);
+					dispose();
+					FoodCart.main(args);
+				}
+			}
+		});
+		add9.setBounds(516, 316, 50, 15);
+		if (numberOfNode>=9) {
+			contentPane.add(add9);
+		}
+		
+		//10th add button
+		//add the quantity of order by one
+		JButton add10 = new JButton("+");
+		add10.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (numberOfNode>=1){
+					order.addMenu(allOrder.get(9).menuName, 1, allOrder.get(9).price);
+					dispose();
+					FoodCart.main(args);
+				}
+			}
+		});
+		add10.setBounds(516, 331, 50, 15);
+		if (numberOfNode>=10) {
+			contentPane.add(add10);
+		}
+		
+		//11th add button
+		//add the quantity of order by one
+		JButton add11 = new JButton("+");
+		add11.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (numberOfNode>=11){
+					order.addMenu(allOrder.get(10).menuName, 1, allOrder.get(10).price);
+					dispose();
+					FoodCart.main(args);
+				}
+			}
+		});
+		add11.setBounds(516, 346, 50, 15);
+		if (numberOfNode>=11) {
+			contentPane.add(add11);
+		}
+		
+		//12th add button
+		//add the quantity of order by one
+		JButton add12 = new JButton("+");
+		add12.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (numberOfNode>=12){
+					order.addMenu(allOrder.get(11).menuName, 1, allOrder.get(11).price);
+					dispose();
+					FoodCart.main(args);
+				}
+			}
+		});
+		add12.setBounds(516, 361, 50, 15);
+		if (numberOfNode>=12) {
+			contentPane.add(add12);
+		}
+		
+		//13th add button
+		//add the quantity of order by one
+		JButton add13 = new JButton("+");
+		add13.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (numberOfNode>=1){
+					order.addMenu(allOrder.get(12).menuName, 1, allOrder.get(12).price);
+					dispose();
+					FoodCart.main(args);
+				}
+			}
+		});
+		add13.setBounds(516, 376, 50, 15);
+		if (numberOfNode>=13) {
+			contentPane.add(add13);
+		}
+		
+		//14th add button
+		//add the quantity of order by one
+		JButton add14 = new JButton("+");
+		add14.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (numberOfNode>=14){
+					order.addMenu(allOrder.get(13).menuName, 1, allOrder.get(13).price);
+					dispose();
+					FoodCart.main(args);
+				}
+			}
+		});
+		add14.setBounds(516, 391, 50, 15);
+		if (numberOfNode>=14) {
+			contentPane.add(add14);
+		}
+		
+		//15th add button
+		//add the quantity of order by one
+		JButton add15 = new JButton("+");
+		add15.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (numberOfNode>=15){
+					order.addMenu(allOrder.get(14).menuName, 1, allOrder.get(14).price);
+					dispose();
+					FoodCart.main(args);
+				}
+			}
+		});
+		add15.setBounds(516, 406, 50, 15);
+		if (numberOfNode>=15) {
+			contentPane.add(add15);
+		}
+		
+		//16th add button
+		//add the quantity of order by one
+		JButton add16 = new JButton("+");
+		add16.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				if (numberOfNode>=16){
+					order.addMenu(allOrder.get(15).menuName, 1, allOrder.get(15).price);
+					dispose();
+					FoodCart.main(args);
+				}
+			}
+		});
+		add16.setBounds(516, 421, 50, 15);
+		if (numberOfNode>=16) {
+			contentPane.add(add16);
+		}
+		
+		//create a button that clear all the orders after clicked
+		JButton clearAllButton = new JButton("Clear All");
+		clearAllButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				order.deleteAll(allOrder);
+				dispose();
+				FoodCart.main(args);
+			}
+		});
+		clearAllButton.setFont(new Font("Segoe UI", Font.PLAIN, 25));
+		clearAllButton.setBounds(96, 490, 133, 41);
+		contentPane.add(clearAllButton);
 		
 		//create the panel for the header
 		JPanel header = new JPanel();
@@ -417,28 +706,27 @@ public class FoodCart extends JFrame {
 
 		JLabel total = new JLabel("Total: RM "+df.format(sum));
 		total.setFont(new Font("Tahoma", Font.PLAIN, 17));
-		total.setHorizontalAlignment(SwingConstants.RIGHT);
-		total.setBounds(330, 450, 205, 40);
+		total.setHorizontalAlignment(SwingConstants.LEFT);
+		total.setBounds(411, 450, 142, 40);
 		contentPane.add(total);
 		
 		//create model for table
 		DefaultTableModel model = new DefaultTableModel();
 		//set name of column of the table
-		model.setColumnIdentifiers(new Object[]{"No.", "Food Name", "Qty.", "Unit Price", "Total",""});
-		model.addRow(new Object[]{"No.", "Food Name", "Qty.", "Unit Price","Total",""});
+		model.setColumnIdentifiers(new Object[]{"No.", "Food Name", "Qty.", "Unit Price", "Total"});
+		model.addRow(new Object[]{"No.", "Food Name", "Qty.", "Unit Price","Total"});
 		//insert the detail of the order from the linked list into the table
 		for (int i=0; i<allOrder.size();i++){
 			model.addRow(new Object[]{String.valueOf(i+1), allOrder.get(i).menuName, allOrder.get(i).quantity, df.format(allOrder.get(i).price), df.format(allOrder.get(i).price*allOrder.get(i).quantity),""});
 		}
 		//create a table and put the model into the table
 		JTable table = new JTable(model);
-		table.setBounds(16,181,599,260);
+		table.setBounds(16,181,500,260);
 		table.getColumnModel().getColumn(0).setPreferredWidth(5);
-		table.getColumnModel().getColumn(1).setPreferredWidth(210);
-		table.getColumnModel().getColumn(2).setPreferredWidth(50);
-		table.getColumnModel().getColumn(3).setPreferredWidth(50);
-		table.getColumnModel().getColumn(4).setPreferredWidth(50);
-		table.setCellSelectionEnabled(true);
+		table.getColumnModel().getColumn(1).setPreferredWidth(200);
+		table.getColumnModel().getColumn(2).setPreferredWidth(20);
+		table.getColumnModel().getColumn(3).setPreferredWidth(20);
+		table.getColumnModel().getColumn(4).setPreferredWidth(20);
 		table.setModel(model);
 		table.setRowHeight(15);
 
